@@ -22,7 +22,7 @@ public class StepDefinition extends WebDriverManager{
 		driver = sd.getDiver();
 		driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
 		lp = new HomePage(driver);
-		lp.method1();
+		
         System.out.println("Normal Feature");
     }
 
@@ -41,7 +41,7 @@ public class StepDefinition extends WebDriverManager{
     @Given("^user navigated to login page$")
     public void user_navigated_to_login_page()  {
     	gp = new HomePage(driver);
-    	gp.method1();
+    	
     	System.out.println("Sample Feature");
     }
 
