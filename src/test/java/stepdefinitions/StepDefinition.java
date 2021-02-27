@@ -8,20 +8,20 @@ import driverManager.WebDriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.LoginPage;
+import pages.HomePage;
 
 public class StepDefinition extends WebDriverManager{
 	
 	public static WebDriver driver;
-	LoginPage lp;
-	LoginPage gp;
+	HomePage lp;
+	HomePage gp;
 	
 	@Given("^user should be in login page$")
     public void user_should_be_in_login_page()  {
 		StepDefinition sd = new StepDefinition();
 		driver = sd.getDiver();
 		driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
-		lp = new LoginPage(driver);
+		lp = new HomePage(driver);
 		lp.method1();
         System.out.println("Normal Feature");
     }
@@ -40,7 +40,7 @@ public class StepDefinition extends WebDriverManager{
     
     @Given("^user navigated to login page$")
     public void user_navigated_to_login_page()  {
-    	gp = new LoginPage(driver);
+    	gp = new HomePage(driver);
     	gp.method1();
     	System.out.println("Sample Feature");
     }
