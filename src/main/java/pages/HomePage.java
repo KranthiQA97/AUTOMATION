@@ -45,6 +45,8 @@ public class HomePage extends SeleniumHelper {
 	
 	
 	
+	
+	
 //	######################## Actions Methods ######################################
 
 	public void clickLogo() {
