@@ -50,6 +50,7 @@ public class HomePage extends SeleniumHelper {
 //	######################## Actions Methods ######################################
 
 	public void clickLogo() {
+		click(logo, "Logo");
 	}
 
 	public void method2() {
