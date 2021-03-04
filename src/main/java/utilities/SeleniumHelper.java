@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -13,8 +14,8 @@ import driverManager.WebDriverManager;
 
 public class SeleniumHelper extends WebDriverManager {
 
-	private static void raiseException() {
-		takeScreenShot();
+	private static void raiseException(WebElement ele) {
+		takeScreenShot(ele);
 	}
 	
 	public static long currDateAndTime()
@@ -24,7 +25,9 @@ public class SeleniumHelper extends WebDriverManager {
 		return currDateTime;
 	}
 
-	private static void takeScreenShot() {
+	private static void takeScreenShot(WebElement ele) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].setAttribute('style','border: solid 2px red')", ele);
 		
 		File screenShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
@@ -41,7 +44,7 @@ public class SeleniumHelper extends WebDriverManager {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			raiseException();
+			raiseException(ele);
 		}
 
 	}
