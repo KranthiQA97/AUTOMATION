@@ -60,5 +60,9 @@ public class HomePage extends SeleniumHelper {
 	public void method3() {
 		System.out.println("Method3");
 	}
+	
+	public void method4() {
+		System.out.println("Method3");
+	}
 
 }
